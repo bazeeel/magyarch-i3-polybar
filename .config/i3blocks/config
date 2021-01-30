@@ -1,0 +1,59 @@
+# For the benefit of emacs users: -*- shell-script -*-
+#
+#  _ _____ _     _            _
+# (_)___ /| |__ | | ___   ___| | _____
+# | | |_ \| '_ \| |/ _ \ / __| |/ / __|
+# | |___) | |_) | | (_) | (__|   <\__ \
+# |_|____/|_.__/|_|\___/ \___|_|\_\___/
+
+command=~/.local/bin/statusbar/$BLOCK_NAME
+align=center
+separator=true
+color=#c3cdc8
+separator_block_width=15
+markup=pango
+
+
+
+[weather]
+command=weather
+interval=18000
+signal=5
+
+#[battery]
+#command=battery
+#interval=5
+
+
+[home]
+command=df -h /home | awk 'FNR==2{print $4}'
+interval=3
+label=<span color="#2e8b57"> </span>
+
+[cpu_temp]
+command=cpu
+interval=2
+label= 
+
+[memory]
+command=memory
+interval=2
+label=🧠
+
+
+[volume]
+command=volume
+interval=1
+#signal=10
+
+
+[clock]
+label=📅
+interval=30
+
+[record]
+command=cat /tmp/recordingicon
+interval=once
+signal=9
+
+
