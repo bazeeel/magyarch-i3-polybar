@@ -170,5 +170,9 @@ client.background       #2f2b26
 
 
 # }
+
+# master and stuck layout
+exec --no-startup-id $HOME/.local/bin/tools/column-layout &
+
 # use polybar instead of i3bar
 exec_always --no-startup-id ~/.config/polybar/launch.sh 
