@@ -3,11 +3,11 @@
 
 # Terminal emulator
 super + {_,shift + } Return
-     {$TERMINAL, alacritty --title floating}
+     {alacritty, alacritty --title floating}
 
 # Dmenu2 and rofi(window switcher, application launcher)
 super + {_,shift +} d
-    {dmenu_run -nb '#2f2b26' -nf '#c3cdc8' -sb '#2e8b57' -fn 'JetBrains Mono Medium-11' -p 'Search', rofi_run -r}
+    {dmenu_run -nb '#2f2b26' -nf '#c3cdc8' -sb '#2e8b57' -fn 'JetBrains Mono Nerd Font-12' -p 'Search', rofi_run -r}
 
 # Chat client, gui filemanager
 super + {_,shift + } p
@@ -15,7 +15,7 @@ super + {_,shift + } p
 
 # Default web browser firfox,and brave
 super + {_,shift + } w
-    {$BROWSER, firefox}
+    {$BROWSER, rofi_run -w}
 
 # open gui text editor sublime
 super + shift + e
@@ -23,11 +23,11 @@ super + shift + e
 
 # Show keybind in rofi,htop system monitor
 super + {_,shift + } i
-    {i3keys.sh, $TERMINAL -e htop} 
+    {column-layout, promote-i3 &}
 
 # Reload sxhkd
 super + Escape
-    pkill -USR1 -x sxhkd ;\notify-send "Sxhkd újratölt"
+    pkill -USR1 -x sxhkd
 
 # Record and stream 
 super + {KP_Home,KP_End}
@@ -60,7 +60,7 @@ super + F3
 # Take screenshot
 super + F4
     maim ~/Képek/Képernyőképek/`date +%Y-%m-%d_%H:%M:%S`.png
-    
+
 # Pick screenshot type
 super + F5
     maimpick
@@ -82,17 +82,16 @@ super + {F9,F10}
     {dmenumount,dmenuumount}
     
 # Decrease volume -5
-alt + Down
+F10
     amixer set Master 5%-
 
 # Increase volume +5
-alt + Up
+F11
     amixer set Master 5%+
 
 # Mute volume
 F12
-   amixer set Master toggle
-
+   layout_manager.sh
 
 # Close windows
 super + q
@@ -100,19 +99,19 @@ super + q
 
 # Quit,reboot,shutdown menu/i3; reload config
 super + {_,shift + } c
-     {power, i3-msg restart ;\notify-send "i3 újraindul."}
+     {rofi_run -l, i3-msg reload}
 
 # i3; restart i3 in-place (preserves layout/session)  
 super + {_,shift + } r
-     {$TERMINAL -e vifm, i3-msg reload ;\notify-send "i3 újratölt."}
+     {$TERMINAL -e $FILE, i3-msg restart}
 
 # Change focus between tiling and floating and toggle floating windows
 super + {_,shift + } space
      {i3-msg focus mode_toggle, i3-msg floating toggle}
 
 # Change container layout (stacked, tabbed, fullscreen toggle split)
-super + {u,t,e}
-     i3-msg layout {stacked,tabbed,toggle split}
+super + {s,t,e}
+     i3-msg layout {stacked, tabbed, toggle split}
 
 # Fullscreen toggle
 super + f
@@ -125,12 +124,12 @@ super + {b,v}
 # Change focus / move focused window
 super + {_,shift +}{h,j,k,l}
   i3-msg {focus,move} {left,down,up,right}
-  
 
 super + {_,shift +}{Left,Down,Up,Right}
   i3-msg {focus,move} {left,down,up,right}
     
-# Gaps increase
+
+ # Gaps increase
 super + a  
   i3-msg gaps outer current plus 5
 
@@ -138,7 +137,6 @@ super + a
 super + shift + a
   i3-msg gaps outer current minus 5  
 
-# Scratchpad
-F1
-  tdrop -ma -w 50% -h 50% -y 25% -x 25% pavucontrol  
+super + shift + b
+  i3-tabbed &
 
