@@ -95,7 +95,7 @@ font-0 = "JetBrains Mono:size=10;1"
 font-1 = "FontAwesome:size=11;1"
 font-2 = "Joy Pixels:scale=10;1"
 
-modules-left = rofi i3
+modules-left = i3
 modules-center = cpu-graph
 modules-right = itemp sep mem sep weather sep date sep pulseaudio sep power 
 
