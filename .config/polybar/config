@@ -95,9 +95,9 @@ font-0 = "JetBrains Mono:size=10;1"
 font-1 = "FontAwesome:size=11;1"
 font-2 = "Joy Pixels:scale=10;1"
 
-modules-left = i3
-modules-center = cpu-graph
-modules-right = itemp sep mem sep weather sep date sep pulseaudio sep power 
+modules-left = rofi pulseaudio 
+modules-center = i3
+modules-right = itemp sep mem sep weather sep date sep power 
 
 #tray-position = none
 
@@ -105,8 +105,8 @@ tray-detached = false
 tray-offset-x = 0
 tray-offset-y = 0
 tray-padding = 2
-tray-maxsize = 24
-tray-scale = 1.1
+tray-maxsize = 22
+tray-scale = 1.0
 tray-position = right
 tray-background = ${colors.background}
 
@@ -164,7 +164,7 @@ enable-click = true
 
 ; Create scroll handlers used to cycle workspaces
 ; Default: true
-enable-scroll = true
+enable-scroll = false
 
 ; Wrap around when reaching the first/last workspace
 ; Default: true
@@ -271,11 +271,11 @@ label-muted =  muted
 label-muted-foreground = ${xrdb:color7:#666}
 
 bar-volume-width = 10
-bar-volume-foreground-0 = ${xrdb:white}
-bar-volume-foreground-1 = ${xrdb:white}
-bar-volume-foreground-2 = ${xrdb:yellow}
-bar-volume-foreground-3 = ${xrdb:yellow}
-bar-volume-foreground-4 = ${xrdb:yellow}
+bar-volume-foreground-0 = ${xrdb:green}
+bar-volume-foreground-1 = ${xrdb:green}
+bar-volume-foreground-2 = ${xrdb:green}
+bar-volume-foreground-3 = ${xrdb:green}
+bar-volume-foreground-4 = ${xrdb:green}
 bar-volume-foreground-5 = ${xrdb:green}
 bar-volume-foreground-6 = ${xrdb:green}
 bar-volume-foreground-7 = ${xrdb:green}
@@ -664,7 +664,7 @@ content-background = ${colors.background}
 ;format-background = ${colors.background}
 content-padding = 1
 
-click-left = power
+click-left = rofi_run -l
 
 
 [module/help]
@@ -674,18 +674,18 @@ content-foreground = ${colors.foreground}
 content-background = ${colors.background}
 content-padding = 1
 
-click-left = zathura $HOME/.local/share/Magyarch-xmonad.pdf &
+click-left = zathura $HOME/.local/share/Magyarch-i3.pdf &
 
 
 [module/rofi]
 type = custom/text
 content = "i3"
 content-padding = 1
-content-foreground = #2f2b26
+content-foreground = #1a1a1a
 ;content-background = #ffa500
 content-background = 2e8b57
-content-overline = #2f2b26
-content-underline = #2f2b26
+content-overline = #1a1aa1a
+content-underline = #1a1a1a
 
 click-left = rofi -modi run,drun -show drun -location 1 -xoffset 10 -yoffset 23 -line-padding 4 -columns 1 -width 15 -lines 20 -padding 15 -hide-scrollbar -show-icons -drun-icon-theme
 
