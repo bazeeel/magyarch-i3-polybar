@@ -95,9 +95,9 @@ font-0 = "JetBrains Mono:size=10;1"
 font-1 = "FontAwesome:size=11;1"
 font-2 = "Joy Pixels:scale=10;1"
 
-modules-left = rofi pulseaudio 
+modules-left = rofi pulseaudio
 modules-center = i3
-modules-right = itemp sep mem sep weather sep date sep power 
+modules-right = itemp sep mem sep weather sep date sep power
 
 #tray-position = none
 
@@ -684,7 +684,7 @@ content-padding = 1
 content-foreground = #1a1a1a
 ;content-background = #ffa500
 content-background = 2e8b57
-content-overline = #1a1aa1a
+content-overline = #1a1a1a
 content-underline = #1a1a1a
 
 click-left = rofi -modi run,drun -show drun -location 1 -xoffset 10 -yoffset 23 -line-padding 4 -columns 1 -width 15 -lines 20 -padding 15 -hide-scrollbar -show-icons -drun-icon-theme
